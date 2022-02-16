@@ -1,8 +1,8 @@
 /* change these */
-
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:400italic,800italic,400,800");
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@900&display=swap');
 /* @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap'); */
-@import url("https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic");
+@import url("https://use.typekit.net/iry6ryc.css");
+@import url("https://use.typekit.net/iry6ryc.css");
 
 * {
   box-sizing: border-box;
@@ -14,14 +14,15 @@ use the fonts in other ways in the font hierarchy etc. */
 
 /* change these */
 :root {
-  --bg-color: red;
-  --link-color: green;
-  --link-hover-color: blue;
-  --color-4: hotpink;
-  --color-5: rebeccapurple;
+  
+  --color-1: #b43518;
+  --color-2: #fbb020;
+  --color-3: #d16c35;
+--color-4: #000;
 
-  --primary-font: "Open Sans", sans-serif;
-  --secondary-font: "Droid Serif", serif;
+  --primary-font: "milka", sans-serif;
+  --secondary-font: "Heebo", sans-serif;
+  --main-text-font: "ibm-plex-mono", sans-serif;
   --main-text-color: #000;
 
   --white-space: 1rem;
@@ -45,9 +46,10 @@ button:active {
 }
 
 a:hover {
-  color: var(--link-hover-color);
+  color: var(--color-3);
   font-size: 4rem;
 }
+
 html {
   font-size: 100%;
   font-family: var(--primary-font);
@@ -67,34 +69,42 @@ footer {
 }
 
 .full-width {
-  background: var(--bg-color);
+  background: var(--color-4);
   color: white;
   width: 100%;
 }
 
+
+
 .header-wrapper h1 {
+  font-family: var(--primary-font);
   font-size: 3rem;
   text-transform: uppercase;
-  letter-spacing: -2px;
+  letter-spacing: 2px;
   padding-right: 0.75em;
-  font-weight: bold;
+  font-weight: normal;
+  text-shadow: 3px 3px grey;
   color: white;
 }
 
 .header-wrapper h2 {
+  font-family: var(--secondary-font);
   font-size: 1.6em;
   color: rgba(255, 255, 255, 0.95);
-  font-weight: bold;
+  font-weight: normal;
   margin: var(--white-space) 0;
 }
 
 .header-wrapper h3 {
   font-size: 1.2rem;
-  font-style: italic;
+  font-style: normal;
+  font-family: var(--main-text-font);
 }
 
 .header-wrapper h4 {
+  padding: 1rem 0rem 1rem 0rem;
   font-size: 0.8rem;
+  font-family: var(--main-text-font);
 }
 
 main {
@@ -106,15 +116,28 @@ section {
 }
 
 .section-heading {
-  font-style: italic;
+  font-family: var(--secondary-font);
+  font-style: normal;
   font-size: 1.3rem;
-  color: #777;
+  color: #000;
+  opacity: 1;
   margin: 0.5rem 0;
+}
+
+.section-heading:hover{
+  opacity: 0.5;
 }
 
 ul {
   display: flex;
   justify-content: space-between;
+}
+
+ul li{
+  font-family: var(--main-text-font);
+  font-size: 2rem;
+  font-weight: bold;
+  color: #000;
 }
 
 .swatches li {
@@ -128,15 +151,15 @@ ul li:last-child {
 }
 
 .color-swatch-1 {
-  background-color: var(--bg-color);
+  background-color: var(--color-1);
 }
 
 .color-swatch-2 {
-  background-color: var(--link-color);
+  background-color: var(--color-2);
 }
 
 .color-swatch-3 {
-  background-color: var(--link-hover-color);
+  background-color: var(--color-3);
 }
 
 .color-swatch-4 {
@@ -153,21 +176,23 @@ ul li:last-child {
   margin-right: 5vw;
 }
 
-.texture-swatch-1 {
-  background: url(../img/pw_maze_white.png) top left repeat;
-}
 
 .texture-swatch-2 {
-  background: url(../img/subtle_grunge.png) top left repeat;
+  background: black;
+  animation: grain 0s steps(10) infinite;
 }
 
-.texture-swatch-1 {
-  background: url(../img/pw_maze_white.png) top left repeat;
+.noise {
+  /* ... */
+  background: 
+    linear-gradient(20deg, rebeccapurple, transparent), 
+    url(https://grainy-gradients.vercel.app/noise.svg); 
+ 
 }
-
-.texture-swatch-3 {
-  background: url(../img/white_paperboard.png) top left repeat;
-}
+.overlay {
+  /* ... */
+  background: moccasin;
+  mix-blend-mode: multiply;}
 
 .images ul {
   flex-direction: column;
@@ -182,22 +207,25 @@ ul li:last-child {
 
 button {
   padding: 1rem;
-  border-radius: 4px;
-  background: var(--link-color);
+  border-radius: 0.5rem;
+  background: var(--color-1);
   text-align: center;
   text-decoration: none;
-  font: bold 1.25em/1 var(--primary-font);
+  font: bold 1.25em/1 var(--secondary-font);
+  font-weight: normal;
   letter-spacing: 1px;
-  color: white;
+  color: var(--color-2);
   text-transform: uppercase;
-  text-shadow: 0px -1px 0px #0374a0;
+  text-shadow: 0px -1px 0px #000;
   transition: all 0.2s ease;
   cursor: pointer;
   margin: 0 1rem 0 0; /* 22S - 0 margin-bottom mobile */
 }
 
 .secondary-button {
-  background: var(--color-5);
+  background: var(--color-2);
+  color: var(--color-1);
+
 }
 
 button:focus,
@@ -208,23 +236,29 @@ button:focus-within {
 }
 
 .typography-main {
+  font-family: var(--main-text-font);
   color: var(--main-text-color);
 }
 
 .h1-sample {
+  font-family: var(--primary-font);
   font-size: 2.4rem;
-  font-weight: bold;
+  font-weight: normal;
+  color: var(--color-1);
+  text-shadow: 3px 3px var(--color-2);
 }
 
 .h2-sample {
   font-family: var(--secondary-font);
-  font-style: italic;
+  font-style: normal;
+  color: var(--color-2);
   font-size: 1.25rem;
 }
 
 p.typography-sample {
-  font-family: var(--secondary-font);
+  font-family: var(--main-text-font);
   line-height: 1.5;
+ font-weight: 600;
   max-width: 960px;
 }
 
@@ -237,8 +271,8 @@ em {
 }
 
 a {
-  font-family: var(--primary-font);
-  color: var(--link-color);
+  font-family: var(--secondary-font);
+  color: var(--color-1);
   font-weight: bold;
   text-decoration: none;
   transition: all 0.2s;
@@ -288,3 +322,4 @@ footer {
     flex-direction: row;
   }
 }
+
